@@ -1,0 +1,508 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27-mar-2017, 11.47.11
+    Author     : Stefano95
+*/
+
+/*Task 3
+
+Impostare le caratteristiche generali di visualizzazione della pagina, facendo in 
+modo che le regole che scrivete valgano per tutte le pagine. In particolare:
+- Colore di sfondo
+- Colore e font per il testo 
+- Proprietà dei titoli (almeno da h1 ad h3)
+- Proprietà dei link
+- Visualizzazione dei campi di input
+
+Fate attenzione alla leggibilità ed alla gradevolezza degli stili. 
+*/
+
+body
+{
+    background-color: deepskyblue;
+}
+
+p
+{
+    font-family: "Times New Roman", Arial, serif, sans-serif;
+}
+
+h1,h2,h3
+{
+    color: brown;
+    font-family: Calibri, Times, serif, sans-serif;
+}
+
+/*
+Ho ripetuto questo tag in modo tale che mi centrasse solo il testo 
+al suo interno.
+*/
+  
+h1
+{
+    text-align: center;
+}
+
+a:link
+{
+    color: blue;
+}
+
+a:visited
+{
+    color: black;
+}
+
+a:hover
+{
+    color: blueviolet;
+}
+
+label:after,label:before
+{
+    content: '\A';
+    white-space: pre;
+}
+
+/*
+Personalmente ho preferito strutturare il form in questa maniera
+perché essendo la parte principale della sua pagina è giusto che sia centrato
+e che abbia questa struttura:
+    
+                        - label
+                        - input
+
+da ripetersi per tutti i campi del form.
+  
+Ho visto che anche altri siti (moodle, amazon) adottano questa strategia e ne 
+ho preso spunto.
+*/
+
+/*Fine task 3*/
+
+/*
+Task 4
+Scrivere delle regole CSS che permetta alla struttura della pagina bacheca.html di essere visualizzata come nella seguente figura. 
+In particolare:
+•	Avete libertà sui colori e tipi di font. Non è quindi necessario che sia in bianco e nero, quello che vedete è solo una bozza. Gli stili che vedete sono anzi sconsigliati (per esempio il font è bruttissimo). 
+•	Vi viene richiesto di individuare quelle che nella bozza sarebbero immagini decorative (da non inserire nell’HTML) dalle immagini che portano informazione. Le immagini decorative devono essere inserite in modo opzionale tramite CSS (cioè se lo fate correttamente vi daremo uno 0.1 in più, se non lo fate potete prendere comunque il massimo). 
+•	Non considerate il form di ricerca e quello per l’inserimento di un nuovo post per i il momento
+*/
+
+#utente1
+{
+    border: 1px solid black;
+    background-color: white;
+    text-align: left;
+    width: auto;
+    padding: 10px;
+}
+
+#utente2
+{
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: activeborder;
+    text-align: left;
+    width: auto;
+    padding: 10px;
+}
+
+#utente3
+{
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: activecaption;
+    text-align: left;
+    width: auto;
+    padding: 10px;
+}
+
+#utente4
+{
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: aqua;
+    text-align: left;
+    width: auto;
+    padding: 10px;
+}
+
+#utente5
+{
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: aquamarine;
+    text-align: left;
+    width: auto;
+    padding: 10px;
+}
+
+#utente6
+{
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: antiquewhite;
+    text-align: left;
+    width: auto;
+    padding: 10px;
+}
+
+/*Fine task 4*/
+
+/* Task 5
+
+Rendere il form per la login ed il form per l’inserimento di un nuovo oggetto 
+gradevoli dal punto di vista estetico. In particolare:
+- Fare in modo che le label ed i campi di input siano allineati.
+- Impostare bordi e colori per i campi di input, in particolare per il focus
+- Rendere i pulsanti individuabili e gradevoli, posizionandoli al centro dello 
+  spazio riservato al form (oppure in altre posizioni a scelta, che siano però 
+  gradevoli e coerenti per i due form).
+- Utilizzate gli stessi stili per i due form. */
+
+form
+{
+    border: 2px solid black;
+    width: 300px;
+    text-align: center;
+    line-height: 35px;
+    background-color: orange;
+
+/*
+Ho fatto in modo che il form sia messo in modo da non oscurare gli altri 
+blocchi della pagina html 
+*/
+    
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    margin: -200px 0 0 -200px;
+}
+
+input
+{
+    border: 1px solid red;
+    background-color: aquamarine;
+    width: 250px;
+}
+
+textarea
+{
+    border: 1px solid red;
+    background-color: aquamarine;
+    width: 250px;
+}
+
+/*
+Ho fatto questa "puntualizzazione" in modo che i bottoni non prendessero la 
+larghezza dei campi di input
+*/
+
+input[type="submit"]
+{
+    border: 1px solid red;
+    background-color: aquamarine;
+    width: 130px;
+}
+
+input[type="reset"]
+{
+    border: 1px solid red;
+    background-color: aquamarine;
+    width: 130px;
+}
+
+/* Fine "puntualizzazione" */
+
+input:focus 
+{
+  border: 1px solid red;
+  color: red;
+}
+
+/* Fine task 5 */
+
+/*Task 6
+Create un layout responsive, da utilizzare per tutte le pagine. In particolare considerate tre configuazioni:
+•	Per larghezze maggiori o uguali a 1024px utilizzare un layout a due colonne
+•	Per larghezze minori o uguali a 480px utilizzare un layout ad una sola colonna
+•	Per quelli intermedi utilizzare massimo due colonne. 
+Posizionare i vari contenuti nella posizione ritenuta più appropriata.  
+*/
+
+@media only screen and (min-width: 1024px)
+{
+    p
+    {
+        color:black;
+    }
+    
+    h1,h2,h3
+    {
+        color: brown;
+        text-align: center;
+    }
+    
+    #container
+    {
+        margin: 0 auto;
+        background: deepskyblue;
+    }
+    
+    #header
+    {
+        padding: 20px;
+        background: deepskyblue;
+    }
+    
+    #sidebar
+    {
+        float: left;
+        width: 300px;
+    }
+        
+    #navigazione
+    {
+        background-color: white;
+        border: 1px solid black;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        text-align: center;
+     }
+    
+/*
+Ho usato un "box" separato per i link interni in modo da essere facilmente 
+individuabili
+*/
+    
+    #LinkInterni
+    {
+        margin-top: 50px;
+        border: 1px solid black;
+        background-color: activecaption;
+        text-align: left;
+        width: 300px;
+    }
+        
+    #utenti
+    {
+        margin-top: 60px;
+        border: 1px solid black;
+        width: 200px;
+    }
+        
+    #gruppi
+    {
+        margin-top: 60px;
+        border: 1px solid black;
+        width: 200px;
+    }
+    
+    #content
+    {
+        float: right;
+        width: 1000px;
+    }
+    
+    #utente1, #utente2, #utente3, #utente4, #utente5, #utente6
+    {
+        width: auto;
+        text-align: center;
+    }
+    
+    #footer
+    {
+        padding: 20px;
+        margin-top: 2100px;
+        background-color: whitesmoke;
+        align-content: center;
+    }
+    
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1024px)
+{
+    p
+    {
+        color:black;
+    }
+    
+    h1,h2,h3
+    {
+        color: brown;
+        text-align: center;
+    }
+    
+    #container
+    {
+        margin: 0 auto;
+        background-color: deepskyblue;
+    }
+    
+    #header
+    {
+        padding: 9px;
+        background-color: deepskyblue;
+        text-align: center;
+    }
+    
+    #sidebar
+    {
+        float: left;
+        width: 200px;
+    }
+    
+    #navigazione
+     {
+        margin-top: 20px;
+        background-color: white;
+        text-align: center;
+        border: 1px solid black;
+        padding-top: 3px;
+        padding-bottom: 3px;
+     }
+     
+    #LinkInterni
+    {
+        margin-top: 50px;
+        border: 1px solid black;
+        background-color: activecaption;
+        text-align: left;
+        width: 200px;
+    }
+     
+    #utenti
+    {
+        margin-top: 60px;
+        border: 1px solid black;
+        width: 200px;
+    }
+        
+    #gruppi
+    {
+        margin-top: 60px;
+        border: 1px solid black;
+        width: 200px;
+    }
+        
+    #content
+    {
+        float: right;
+        max-width: 650px;
+    }
+    
+    #utente1, #utente2, #utente3, #utente4, #utente5, #utente6
+    {
+        width: auto;
+        text-align: center;
+    }
+    
+/*
+Sia nel content che nella sidebar in questo caso ho adottato la proprietà left in 
+modo che i due div si affianchino nella pagina e vengano create le due colonne
+*/ 
+
+/*
+Tiene il form centrato nella pagina
+*/
+    
+    form
+    {
+        position: absolute;
+        top: 55%;
+        left: 55%;
+    }
+    
+    #footer
+    {
+        padding: 9px;
+        background-color: whitesmoke;
+        margin-top: 2100px;
+        align-content: center;
+    }
+}
+
+@media only screen and (max-width: 480px)
+{
+    p
+    {
+        color:black;
+    }
+    
+    h1,h2,h3
+    {
+        color: brown;
+    }
+    
+    #container
+    {
+        margin: 0 auto;
+        background-color: deepskyblue;
+    }
+    
+    #header
+    {
+        padding: 9px;
+        background-color: deepskyblue;
+        text-align: center;
+    }
+    
+    #navigazione
+    {
+        background-color: white;
+        text-align: center;
+        border: 1px solid black;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    
+    #LinkInterni
+    {
+        border: 1px solid black;
+        background-color: activecaption;
+        text-align: left;
+        width: 300px;
+        margin-top: 20px;
+    }
+    
+    #utenti
+    {
+        margin-top: 40px;
+        border: 1px solid black;
+        width: 200px;
+    }
+        
+    #gruppi
+    {
+        margin-top: 40px;
+        border: 1px solid black;
+        width: 200px;
+    }
+    
+    #content
+    {
+        padding: 9px;
+        margin-left: auto;
+    }
+    
+    form
+    {
+        position: absolute;
+        top: 60%;
+        left: 60%;
+    }
+    
+    #footer
+    {
+        padding: 9px;
+        background-color: whitesmoke;
+        margin-top: 850px;
+        
+    }
+
+}

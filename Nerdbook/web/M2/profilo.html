@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="it">
+    <head>
+        <title>Nerdbook</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Nerdbook, bacheca personale">
+        <meta name="description" content="Pagina relativa alla bacheca personale">
+        <meta name="author" content="Stefano Cabiddu">
+        <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
+    
+    <body>
+        
+        <div id="container"> 
+            
+        <div id="header">
+                
+            <h2>Inserisci un nuovo utente</h2>
+                
+                
+            <!--Sezione che presenta dei link in modo che cliccandoci si possa viaggiare 
+                tra le pagine del sito-->
+            
+        <div id="navigazione">
+        
+                <a href="descrizione.html">DescrizioneSocialNetwork</a> 
+                
+                <a href="login.html">Login</a> 
+        
+        </div>
+
+                
+            <!--Form che permette al venditore di inserire un nuovo oggetto nella 
+                tabella, ho usato il metodo post perchè sto gestendo più tipi di dati 
+                che hanno una lunghezza diversa tra di loro-->
+        
+            <!--Contenuto pagina-->
+        
+        <div id="content">
+            
+            <form action="profilo.html" method="post">
+            
+            <label for="NomeUtente">Nome Utente</label>
+            <input type="text" name="NomeUtente" id="NomeUtente">       
+            <label for="CognomeUtente">Cognome Utente</label>
+            <input type="text" name="CognomeUtente" id="CognomeUtente"> 
+            <label for="URLImmagineDescrittiva">URL immagine</label>
+            <input type="url" name="URLImmagineDescrittiva" id="URLImmagineDescrittiva"> 
+            <label for="FrasePresentazione">Frase di Presentazione</label>
+            <textarea name="FrasePresentazione" id="FrasePresentazione" rows="4" cols="20">Frase di Presentazione</textarea>
+            <label for="giorno">Giorno di nascita</label>
+            <input type="number" name="giorno" id="giorno">
+            <label for="mese">Mese di nascita</label>
+            <input type="text" name="mese" id="mese">
+            <label for="anno">Anno di nascita</label>
+            <input type="number" name="anno" id="anno">
+            <label for="Password">Password</label>
+            <input type="password" name="Password" id="Password">
+            <label for="ConfermaPassword">ConfermaPassword</label>
+            <input type="password" name="ConfermaPassword" id="ConfermaPassword">
+        
+            <!--Bottoni che inviano la richiesta alla pagina a cui si riferisce 
+                l'attributo action-->
+        
+            <input type="submit" name="submit" value="Inserisci utente" />
+            <input type="reset" name="reset" value="Cancella" />
+        
+              </form>
+        
+        </div>
+        
+        <div id="footer">
+            
+                <p>Sito realizzato da Stefano Cabiddu</p>
+                
+                <p>
+                    Per ogni domanda mandare una mail a:
+                    stefcabiddu@gmail.com
+                </p>
+                
+        </div>
+        
+        </div>
+                
+        </div>
+        
+  </body>
+  
+</html>
