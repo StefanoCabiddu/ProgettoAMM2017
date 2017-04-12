@@ -93,63 +93,18 @@ In particolare:
 •	Non considerate il form di ricerca e quello per l’inserimento di un nuovo post per i il momento
 */
 
-#utente1
+#utente1, #utente2, #utente3, #utente4, #utente5, #utente6
 {
+    margin-top: 10px;
     border: 1px solid black;
-    background-color: white;
     text-align: left;
     width: auto;
     padding: 10px;
 }
 
-#utente2
+#logout
 {
-    margin-top: 10px;
-    border: 1px solid black;
-    background-color: activeborder;
-    text-align: left;
-    width: auto;
-    padding: 10px;
-}
-
-#utente3
-{
-    margin-top: 10px;
-    border: 1px solid black;
-    background-color: activecaption;
-    text-align: left;
-    width: auto;
-    padding: 10px;
-}
-
-#utente4
-{
-    margin-top: 10px;
-    border: 1px solid black;
-    background-color: aqua;
-    text-align: left;
-    width: auto;
-    padding: 10px;
-}
-
-#utente5
-{
-    margin-top: 10px;
-    border: 1px solid black;
-    background-color: aquamarine;
-    text-align: left;
-    width: auto;
-    padding: 10px;
-}
-
-#utente6
-{
-    margin-top: 10px;
-    border: 1px solid black;
-    background-color: antiquewhite;
-    text-align: left;
-    width: auto;
-    padding: 10px;
+    text-align: right;
 }
 
 /*Fine task 4*/
