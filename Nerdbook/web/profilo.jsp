@@ -66,6 +66,7 @@ and open the template in the editor.
             <c:otherwise>
                 
             <p>Utente autorizzato all'accesso dei contenuti della pagina<p> 
+                
                 <%--Se l'utente e' autorizzato a vedere i contenuti della pagina mando a schermo
                 il form per inserire i propri dati--%>
             <form action="Profilo" method="post">

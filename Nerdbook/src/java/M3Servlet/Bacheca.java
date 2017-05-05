@@ -29,8 +29,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Stefano95
  */
-@WebServlet(name = "Profilo", urlPatterns = {"/Profilo"})
-public class Profilo extends HttpServlet {
+@WebServlet(name = "Bacheca", urlPatterns = {"/Bacheca"})
+public class Bacheca extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,13 +44,14 @@ public class Profilo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         
         HttpSession session = request.getSession(false);
             
             //Controllo se l'utente ha inserito i dati nella label del form
                     if(request.getParameter("submit") != null)
         {
-                        // Preleva i dati inviati
+                                // Preleva i dati inviati
             String username = request.getParameter("Username");
             String password = request.getParameter("Password");
             
@@ -74,6 +75,16 @@ public class Profilo extends HttpServlet {
                         session.removeAttribute(AMMINISTRATORE);
                         session.removeAttribute("Amministratore");
                         
+                        //permetto all'utente di vedere i post che altri utenti hanno messo prendendoli
+                        //dalla lista di Array che li contiene
+                        PostFactory factory =  new PostFactory();        
+                        ArrayList<Post> post = factory.getPostList(); 
+
+                        request.setAttribute(POST, post);
+                        
+                        //invio il controllo alla jsp che stamperà a schermo i post degli utenti registrati
+                        //al social
+                        request.getRequestDispatcher("bacheca.jsp").forward(request, response);
                     }
                     
                     //Controllo se le informazioni inserite dall'utente fanno parte di Amministratore
@@ -85,13 +96,18 @@ public class Profilo extends HttpServlet {
                         session.setAttribute("Amministratore", u);
                         session.removeAttribute(UTENTEREGISTRATO);
                         session.removeAttribute("UtenteRegistrato");
-                       
+                        
+                        //permetto all'utente di vedere i post che altri utenti hanno messo prendendoli
+                        //dalla lista di Array che li contiene
+                        PostFactory factory =  new PostFactory();        
+                        ArrayList<Post> post = factory.getPostList(); 
+
+                        request.setAttribute(POST, post);
+                   
                     }                
                 }
             }
         }
-        
-          request.getRequestDispatcher("profilo.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
