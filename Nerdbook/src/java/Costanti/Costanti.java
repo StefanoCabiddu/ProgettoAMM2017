@@ -16,5 +16,7 @@ public class Costanti {
     public final static String AMMINISTRATORE = "IsAmministratore";
     public final static String POST = "Post";
     public final static String UTENTE = "utente";
+    public static final String DB_USERNAME = "StefanoCabiddu95";
+    public static final String DB_PASSWORD = "nerdcab95";
     
 }

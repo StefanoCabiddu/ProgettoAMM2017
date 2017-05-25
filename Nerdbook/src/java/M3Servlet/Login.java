@@ -9,6 +9,7 @@ import static Costanti.Costanti.AMMINISTRATORE;
 import static Costanti.Costanti.POST;
 import static Costanti.Costanti.UTENTEREGISTRATO;
 import M3Packages.Amministratori;
+import M3Packages.GruppiFactory;
 import M3Packages.Post;
 import M3Packages.PostFactory;
 import M3Packages.Utente;
@@ -18,6 +19,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,8 +32,27 @@ import javax.servlet.http.HttpSession;
  *
  * @author Stefano95
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
+@WebServlet(name = "Login", urlPatterns = {"/Login"}, loadOnStartup = 0)
 public class Login extends HttpServlet {
+    
+    private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
+    private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db-definition/ammdb";
+    private static final String DB_BUILD_PATH = "WEB-INF/db-definition/ammdb";
+    
+    @Override
+  public void init(){
+      String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
+      try {
+          Class.forName(JDBC_DRIVER);
+      } catch (ClassNotFoundException ex) {
+          Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      GruppiFactory.getInstance().setConnectionString(dbConnection);
+      PostFactory.getInstance().setConnectionString(dbConnection);
+      UtenteFactory.getInstance().setConnectionString(dbConnection);
+  }
+
+
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

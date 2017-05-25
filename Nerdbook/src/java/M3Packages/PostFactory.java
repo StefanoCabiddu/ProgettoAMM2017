@@ -13,6 +13,15 @@ import java.util.ArrayList;
  */
 public class PostFactory {
     
+     protected String connectionString;
+     
+     public void setConnectionString(String s){
+	this.connectionString = s;
+}
+     public String getConnectionString(){
+	return this.connectionString;
+}
+
     private static PostFactory post;
     public static PostFactory getInstance() {
         if (post == null) {

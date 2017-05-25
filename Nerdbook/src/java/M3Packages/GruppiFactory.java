@@ -14,6 +14,15 @@ import java.util.List;
  */
 public class GruppiFactory {
     
+    protected String connectionString;
+     
+     public void setConnectionString(String s){
+	this.connectionString = s;
+}
+     public String getConnectionString(){
+	return this.connectionString;
+}
+    
     private static GruppiFactory gruppo;
     public static GruppiFactory getInstance() {
         if (gruppo == null) {

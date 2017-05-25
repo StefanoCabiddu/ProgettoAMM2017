@@ -13,6 +13,15 @@ import java.util.ArrayList;
  */
 public class UtenteFactory {
     
+    protected String connectionString;
+     
+     public void setConnectionString(String s){
+	this.connectionString = s;
+}
+     public String getConnectionString(){
+	return this.connectionString;
+}
+    
     private static UtenteFactory utenti;
     public static UtenteFactory getInstance() {
         if (utenti == null) {
@@ -28,7 +37,7 @@ public class UtenteFactory {
     private ArrayList<Utente> listaAmministratori = new ArrayList<Utente>();
     
     //Factory che setta dati fittizi da usare per testare l'applicazione
-    private UtenteFactory() {
+    public UtenteFactory() {
         
         UtentiRegistrati UtenteRegistrato1 = new UtentiRegistrati();
         UtenteRegistrato1.setId(0);

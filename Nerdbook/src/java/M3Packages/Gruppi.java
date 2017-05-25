@@ -18,7 +18,6 @@ public class Gruppi {
     private String ArgomentoGruppo;
     private String CaratteristicheGruppo;
     private int NumeroPartecipanti;
-    private String NomeAmministratoreGruppo;
     
     
     /*Costruttore*/
@@ -30,7 +29,6 @@ public class Gruppi {
         ArgomentoGruppo = "";
         CaratteristicheGruppo = "";
         NumeroPartecipanti = 0;
-        NomeAmministratoreGruppo = "";
     }
     
         /**
@@ -101,20 +99,6 @@ public class Gruppi {
      */
     public void setNumeroPartecipanti(int NumeroPartecipanti) {
         this.NumeroPartecipanti = NumeroPartecipanti;
-    }
-
-    /**
-     * @return the NomeAmministratoreGruppo
-     */
-    public String getNomeAmministratoreGruppo() {
-        return NomeAmministratoreGruppo;
-    }
-
-    /**
-     * @param NomeAmministratoreGruppo the NomeAmministratoreGruppo to set
-     */
-    public void setNomeAmministratoreGruppo(String NomeAmministratoreGruppo) {
-        this.NomeAmministratoreGruppo = NomeAmministratoreGruppo;
     }
     
 }
